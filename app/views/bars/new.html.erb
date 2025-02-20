@@ -1,0 +1,11 @@
+<% content_for :title, "New bar" %>
+
+<h1>New bar</h1>
+
+<%= render "form", bar: @bar %>
+
+<br>
+
+<div>
+  <%= link_to "Back to bars", bars_path %>
+</div>
