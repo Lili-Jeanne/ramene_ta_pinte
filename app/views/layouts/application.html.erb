@@ -21,8 +21,24 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+</header>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">Ramene ta pinte</a>
+      </li>
+      <li>
+        <%= link_to "Boissons", drinks_path %>
+      </li>
+      <li>
+        <%= link_to "Bars", bars_path %>
+      </li>
+    </ul>
+  </nav>
+</header>
   <body>
+    <main class="container">
     <%= yield %>
+    </main>
   </body>
 </html>

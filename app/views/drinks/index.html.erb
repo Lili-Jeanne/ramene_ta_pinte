@@ -1,16 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Drinks" %>
-
-<h1>Drinks</h1>
-
-<div id="drinks">
-  <% @drinks.each do |drink| %>
-    <%= render drink %>
-    <p>
-      <%= link_to "Show this drink", drink %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New drink", new_drink_path %>
+<h1>Liste des boissons</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Bar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drinks.each do |drink| %>
+      <tr>
+        <td><%= drink.name %></td>
+        <td><%= drink.price %>€</td>
+        <td><%= link_to drink.bar %></td>
+        <td><%= link_to "Voir cette boisson", drink %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Nouvelle boisson", new_drink_path %>
+<%= link_to "Voir les bars", bars_path %>

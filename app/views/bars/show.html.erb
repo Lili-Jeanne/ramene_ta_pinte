@@ -1,15 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @bar %>
-<div class="bar_pres">
+  <h2>Liste des boissons :</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @bar.drinks.any? %>
+        <% @bar.drinks.each do |drink| %>
+        <tr>
+          <td><%= drink.name %></td>
+          <td><%= drink.price %>€</td>
+        </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="2">Aucune boisson</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>    
+  <%= link_to "Modifier ce bar", edit_bar_path(@bar), class:"btn btn-danger" %> |
+  <%= link_to "Retourner voir les bars", bars_path %>
 
-  <h2>Boissons</h2>
-  <% @bar.drinks.each do |drink| %>
-    <%= link_to drink %>
-  <% end %>
-
-    <%= link_to "Edit this bar", edit_bar_path(@bar) %> |
-    <%= link_to "Back to bars", bars_path %>
-
-    <%= button_to "Destroy this bar", @bar, method: :delete %>
-</div>
+  <%= button_to "Supprimer ce bar", @bar, method: :delete %>

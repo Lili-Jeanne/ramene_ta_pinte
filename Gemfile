@@ -60,3 +60,5 @@ group :test do
 end
 
 gem "simple_form", "~> 5.3"
+gem "dartsass-rails"
+gem "bootstrap", "~> 5.3.3"
