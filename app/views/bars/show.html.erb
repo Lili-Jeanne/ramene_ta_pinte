@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @bar %>
-
 <div class="bar_pres">
-  <%= link_to "Edit this bar", edit_bar_path(@bar) %> |
-  <%= link_to "Back to bars", bars_path %>
 
-  <%= button_to "Destroy this bar", @bar, method: :delete %>
+  <h2>Boissons</h2>
+  <% @bar.drinks.each do |drink| %>
+    <%= link_to drink %>
+  <% end %>
+
+    <%= link_to "Edit this bar", edit_bar_path(@bar) %> |
+    <%= link_to "Back to bars", bars_path %>
+
+    <%= button_to "Destroy this bar", @bar, method: :delete %>
 </div>
