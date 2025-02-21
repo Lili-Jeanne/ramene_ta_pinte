@@ -16,10 +16,9 @@
         <td><%= drink.name %></td>
         <td><%= drink.price %>€</td>
         <td><%= link_to drink.bar %></td>
-        <td><%= link_to "Voir cette boisson", drink %></td>
+        <td><%= link_to "Voir cette boisson", drink, class:"btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Nouvelle boisson", new_drink_path %>
-<%= link_to "Voir les bars", bars_path %>
+<%= link_to "Nouvelle boisson", new_drink_path, class:"btn btn-primary" %>

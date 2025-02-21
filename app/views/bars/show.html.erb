@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<p><%= notice %></p>
 
 <%= render @bar %>
   <h2>Liste des boissons :</h2>
@@ -23,8 +23,13 @@
         </tr>
       <% end %>
     </tbody>
-  </table>    
-  <%= link_to "Modifier ce bar", edit_bar_path(@bar), class:"btn btn-danger" %> |
-  <%= link_to "Retourner voir les bars", bars_path %>
-
-  <%= button_to "Supprimer ce bar", @bar, method: :delete %>
+  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center gap-4">
+      <%= link_to "Modifier", edit_bar_path(@bar), class:"btn btn-primary" %>
+      <%= link_to "Ajouter une boisson", new_drink_path, class:"btn btn-primary" %>
+      <%= button_to "Supprimer", @bar, method: :delete, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>

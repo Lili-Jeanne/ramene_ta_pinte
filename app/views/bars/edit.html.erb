@@ -1,4 +1,4 @@
-<% content_for :title, "Modifier le bar" %>
+<% content_for :title, "Modifier le bar", class:"btn btn-primary" %>
 
 <h1>Modifier un bar</h1>
 
@@ -7,6 +7,6 @@
 <br>
 
 <div>
-  <%= link_to "Voir le bar", @bar %> |
-  <%= link_to "Retourner voir les bars", bars_path %>
+  <%= link_to "Voir le bar", @bar, class:"btn btn-primary" %> |
+  <%= link_to "Retourner voir les bars", bars_path, class:"btn btn-primary" %>
 </div>
