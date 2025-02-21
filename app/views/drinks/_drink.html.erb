@@ -1,17 +1,13 @@
-<div id="<%= dom_id drink %>">
-    <p>
-      <strong>Nom:</strong>
-      <%= drink.name %>
-    </p>
+<div id="<%= dom_id drink %>" class="text-center">
+    <h1>
+      <strong><%= drink.name %></strong>
+    </h1>
 
-    <p>
-      <strong>Prix:</strong>
+    <h4>
       <%= drink.price %>€
-    </p>
+    </h4>
 
     <p>
-      <strong>Bar:</strong>
-      <%= link_to drink.bar, class:"btn btn-primary" %>
+      <%= link_to drink.bar %>
     </p>
-    
 </div>

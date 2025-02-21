@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<p><%= notice %></p>
 
 <%= render @drink %>
 
-<div>
-  <%= link_to "Edit this drink", edit_drink_path(@drink) %> |
-  <%= link_to "Back to drinks", drinks_path %>
-
-  <%= button_to "Destroy this drink", @drink, method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center gap-4">  <%= link_to "Edit this drink", edit_drink_path(@drink), class:"btn btn-primary" %>
+      <%= link_to "Back to drinks", drinks_path, class:"btn btn-primary" %>
+      <%= button_to "Destroy this drink", @drink, method: :delete, class:"btn btn-primary" %>
+    </div>
+  </div>
 </div>

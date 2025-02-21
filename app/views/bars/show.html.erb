@@ -15,6 +15,7 @@
         <tr>
           <td><%= drink.name %></td>
           <td><%= drink.price %>€</td>
+          <td><%= link_to "Modifier cette boisson", edit_drink_path(drink), class:"btn btn-primary" %></td>
         </tr>
         <% end %>
       <% else %>
