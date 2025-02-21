@@ -2,23 +2,23 @@
 
 <% content_for :title, "Drinks" %>
 <h1>Boissons</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prix</th>
-      <th>Bar</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @drinks.each do |drink| %>
-      <tr>
-        <td><%= drink.name %></td>
-        <td><%= drink.price %>€</td>
-        <td><%= link_to drink.bar %></td>
-        <td><%= link_to "Voir cette boisson", drink, class:"btn btn-primary" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-md-4 mt-4">
+        <div class="card mb-4" style="height: 100%">
+          <div class="card-body">
+            <h5 class="card-title"><%= drink.name %></h5>
+            <p class="card-text"><%= drink.price %>€</p>
+            <%= link_to drink.bar.name, drink.bar, class: "btn btn-dark mt-2" %>
+            <%= link_to 'Modifier', edit_drink_path(drink), class: 'btn btn-dark mt-2' %>
+            <%= link_to "Voir cette boisson", drink, class:"btn btn-dark mt-2" %>
+            <%= button_to "Supprimer", drink, method: :delete, class:"btn btn-dark mt-2" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
+<br>
 <%= link_to "Nouvelle boisson", new_drink_path, class:"btn btn-primary" %>
