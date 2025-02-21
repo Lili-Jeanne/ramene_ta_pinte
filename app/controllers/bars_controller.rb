@@ -65,6 +65,6 @@ class BarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bar_params
-      params.expect(bar: [ :name, :description, :city ])
+      params.expect(bar: [ :name, :description, :city, :image ])
     end
 end
