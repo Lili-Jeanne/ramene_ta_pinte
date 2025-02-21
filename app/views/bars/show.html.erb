@@ -1,36 +1,33 @@
 <p><%= notice %></p>
 
 <%= render @bar %>
-  <h2>Liste des boissons :</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Prix</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if @bar.drinks.any? %>
-        <% @bar.drinks.each do |drink| %>
-        <tr>
-          <td><%= drink.name %></td>
-          <td><%= drink.price %>€</td>
-          <td><%= link_to "Modifier cette boisson", edit_drink_path(drink), class:"btn btn-primary" %></td>
-        </tr>
-        <% end %>
-      <% else %>
-        <tr>
-          <td colspan="2">Aucune boisson</td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<br>
+<h2>Liste des boissons :</h2>
+<div class="row">
+  <% if @bar.drinks.any? %>
+    <% @bar.drinks.each do |drink| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= drink.name %></h5>
+            <p class="card-text"><%= drink.price %>€</p>
+            <%= link_to "Modifier cette boisson", edit_drink_path(drink), class:"btn btn-dark" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col-12">
+      <p>Aucune boisson</p>
+    </div>
+  <% end %>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-12 d-flex justify-content-center gap-4">
-      <%= link_to "Modifier", edit_bar_path(@bar), class:"btn btn-primary" %>
-      <%= link_to "Ajouter une boisson", new_drink_path, class:"btn btn-primary" %>
-      <%= button_to "Supprimer", @bar, method: :delete, class:"btn btn-primary" %>
+      <%= link_to "Modifier", edit_bar_path(@bar), class:"btn btn-dark my-4" %>
+      <%= link_to "Ajouter une boisson", new_drink_path, class:"btn btn-dark my-4" %>
+      <%= button_to "Supprimer", @bar, method: :delete, class:"btn btn-dark my-4" %>
     </div>
   </div>
 </div>

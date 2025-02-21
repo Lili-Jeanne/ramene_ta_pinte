@@ -1,16 +1,19 @@
-<div id="<%= dom_id bar %>">
-<div class="card justify-content-center mx-auto" style="width: 18rem;">
-  <img class="card-img-top" src="<%= bar.image %>" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">
-      <%= bar.name %>
-    </h5>
-    <p class="card-text">
-      <%= bar.description %>
-      <%= bar.city %>
-    </p>
-    <%= link_to 'Modifier', edit_bar_path(bar), class: 'btn btn-primary' %>
+<div id="<%= dom_id bar %>" class="d-flex justify-content-center">
+
+  <div class="card text-align-center" style="width: 40rem;">
+    <img class="card-img-top" src="<%= bar.image %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= bar.name %>
+      </h5>
+      <p class="card-text">
+        <%= bar.description %>
+      </p>
+      <p>
+        <strong> Ville : </strong>
+        <%= bar.city %>
+      </p>
+      <%= link_to 'Modifier', edit_bar_path(bar), class: 'btn btn-dark my-4' %>
+    </div>
   </div>
 </div>
-</div>
-<br>
