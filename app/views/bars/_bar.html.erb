@@ -1,17 +1,16 @@
 <div id="<%= dom_id bar %>">
-  <h1>
-    <%= bar.name %>
-  </h1>
-
-  <h4>
-    <%= bar.description %>
-  </h4>
-
-  <h4>
-    <%= bar.city %>
-  </h4>
-
-  <p>
-    <%= image_tag bar.image %>
-  </p>
+<div class="card justify-content-center mx-auto" style="width: 18rem;">
+  <img class="card-img-top" src="<%= bar.image %>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= bar.name %>
+    </h5>
+    <p class="card-text">
+      <%= bar.description %>
+      <%= bar.city %>
+    </p>
+    <%= link_to 'Modifier', edit_bar_path(bar), class: 'btn btn-primary' %>
+  </div>
 </div>
+</div>
+<br>
