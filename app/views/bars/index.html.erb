@@ -1,25 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<p><%= notice %></p>
 
 <% content_for :title, "Bars" %>
 <h1>Bars</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Adresse</th>
-      <th>Nombre de boissons</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @bars.each do |bar| %>
-      <tr>
-        <td><%= bar.name %></td>
-        <td><%= bar.city %></td>
-        <td><%= bar.drinks.count %></td>
-        <td><%= link_to "Voir ce bar", bar, class: "btn btn-primary" %></td>
-        <td><%= link_to "Ajouter une boisson", new_drink_path, class: "btn btn-primary" %></td>
-      </tr>
+      <div class="col-md-4 mt-4">
+        <div class="card mb-4" style="height: 100%">
+          <img class="card-img-top" src="<%= bar.image %>" alt="Card image">
+          <div class="card-body">
+            <h5 class="card-title"><%= bar.name %></h5>
+            <p class="card-text"><%= bar.city %></p>
+            <p><%= bar.drinks.count %> boisson(s) disponibles</p>
+            <%= link_to 'Voir +', bar_path(bar), class: 'btn btn-dark mt-2' %>
+            <%= link_to 'Modifier', edit_bar_path(bar), class: 'btn btn-dark mt-2' %>
+            <%= link_to "Nouvelle boisson", new_drink_path, class: "btn btn-dark mt-2" %>
+            <%= button_to "Supprimer", bar, method: :delete, class:"btn btn-dark mt-2" %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= link_to "Ajouter un bar", new_bar_path, class:"btn btn-primary" %>
+  </div>
+</div>
+<br>
+<%= link_to "Ajouter un bar", new_bar_path, class:"btn btn-dark" %>
