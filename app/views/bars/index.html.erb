@@ -16,8 +16,8 @@
         <td><%= bar.name %></td>
         <td><%= bar.city %></td>
         <td><%= bar.drinks.count %></td>
-        <td><%= link_to "Voir ce bar", class:"text-decoration-none", bar %></td>
-        <td><%= link_to "Ajouter une boisson",class:"text-decoration-none", new_drink_path %></td>
+        <td><%= link_to "Voir ce bar", bar %></td>
+        <td><%= link_to "Ajouter une boisson", new_drink_path %></td>
       </tr>
     <% end %>
   </tbody>
